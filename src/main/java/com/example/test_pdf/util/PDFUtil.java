@@ -52,7 +52,7 @@ public class PDFUtil {
             ITextRenderer iTextRenderer = new ITextRenderer();
             //设置字体
             ITextFontResolver fontResolver = iTextRenderer.getFontResolver();
-            logger.info("wwwww"+file.getPath());
+            logger.info("获取的路径:"+file.getPath());
             fontResolver.addFont(file.getPath() + "/public/font/simsun.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
             Writer writer = new StringWriter();
