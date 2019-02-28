@@ -1,0 +1,27 @@
+server:
+    port: 8080
+
+spring:
+#    datasource:
+#        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#        url: jdbc:sqlserver://csm-csj.kbao360.com:1433;databaseName=csj_home
+#        username: sa
+#        password: jiang1974!@#
+
+    servlet:
+        multipart:
+            max-file-size: 20MB
+            max-request-size: 100MB
+
+    mustache:
+        enable: true
+        prefix: classpath:/templates/
+        suffix: .html
+        contet-type: text/html
+        cache: false
+
+mybatis:
+    mapper-locations: classpath:mappers/*Mapper.xml
+
+logging:
+    path: log/
