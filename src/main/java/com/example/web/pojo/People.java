@@ -1,4 +1,4 @@
-package com.example.test_pdf.pojo;
+package com.example.web.pojo;
 
 public class People {
     private int id;

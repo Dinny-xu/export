@@ -1,4 +1,4 @@
-package com.example.test_pdf;
+package com.example.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

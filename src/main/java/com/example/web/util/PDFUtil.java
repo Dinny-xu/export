@@ -1,4 +1,4 @@
-package com.example.test_pdf.util;
+package com.example.web.util;
 
 import com.itextpdf.text.pdf.BaseFont;
 import freemarker.template.Configuration;
@@ -14,24 +14,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Locale;
 
-
-/**
- * PDF工具类
- * @author LQX
- *
- */
 public class PDFUtil {
     private static Logger logger = LoggerFactory.getLogger(PDFUtil.class);
-    private static String DEFAULT_ENCODING="utf-8";
-    private static String PDF_TYPE="application/pdf";
-    private static boolean DEFAULT_NOCACHE=true;
-    private static String HEADER_ENCODING="utf-8";
-    private static String HEADER_NOCACHE="no-cache";
+    private static String DEFAULT_ENCODING = "utf-8";
+    private static String PDF_TYPE = "application/pdf";
+    private static boolean DEFAULT_NOCACHE = true;
+    private static String HEADER_ENCODING = "utf-8";
+    private static String HEADER_NOCACHE = "no-cache";
 
     /**
      * 生成PDF文件流
+     *
      * @param ftlName 文件名称
-     * @param root	数据
+     * @param root    数据
      * @return ByteArrayOutputStream
      * @throws Exception
      */
@@ -52,7 +47,7 @@ public class PDFUtil {
             ITextRenderer iTextRenderer = new ITextRenderer();
             //设置字体
             ITextFontResolver fontResolver = iTextRenderer.getFontResolver();
-            logger.info("获取的路径:"+file.getPath());
+            logger.info("获取的路径:" + file.getPath());
             fontResolver.addFont(file.getPath() + "/public/font/simsun.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
             Writer writer = new StringWriter();
@@ -68,10 +63,11 @@ public class PDFUtil {
             iTextRenderer.createPDF(baos);
             baos.close();
             return baos;
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new Exception(e);
         }
     }
+
     public static void renderPdf(HttpServletResponse response, final byte[] bytes, final String filename) {
         initResponseHeader(response, PDF_TYPE);
         setFileDownloadHeader(response, filename, ".pdf");
@@ -118,6 +114,7 @@ public class PDFUtil {
 
     /**
      * 设置让浏览器弹出下载对话框的Header.
+     *
      * @param
      */
     public static void setFileDownloadHeader(HttpServletResponse response, String fileName, String fileType) {

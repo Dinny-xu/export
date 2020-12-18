@@ -1,8 +1,8 @@
-package com.example.test_pdf.service.Impl;
+package com.example.web.service.Impl;
 
-import com.example.test_pdf.dao.ExportExcelMapper;
-import com.example.test_pdf.pojo.People;
-import com.example.test_pdf.service.ExportExcelService;
+import com.example.web.dao.ExportExcelMapper;
+import com.example.web.pojo.KnowledgeLaw;
+import com.example.web.service.ExportExcelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class ExportExcelImpl implements ExportExcelService {
     private ExportExcelMapper exportExcelMapper;
 
     @Override
-    public List<People> teacherinfor() {
+    public List<KnowledgeLaw> teacherinfor() {
         return exportExcelMapper.teacherinfor();
     }
 }

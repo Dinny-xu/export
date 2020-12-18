@@ -1,4 +1,4 @@
-package com.example.test_pdf.pojo;
+package com.example.web.pojo;
 
 import java.io.Serializable;
 import java.util.Date;

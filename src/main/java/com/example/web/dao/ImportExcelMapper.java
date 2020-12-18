@@ -1,6 +1,6 @@
-package com.example.test_pdf.dao;
+package com.example.web.dao;
 
-import com.example.test_pdf.pojo.ImportExcelPeople;
+import com.example.web.pojo.ImportExcelPeople;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
