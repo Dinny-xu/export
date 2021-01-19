@@ -1,35 +1,42 @@
 server:
-    port: 8080
-
+  port: 8085
 spring:
-#    datasource:
-#        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#        url: jdbc:sqlserver://csm-csj.kbao360.com:1433;databaseName=csj_home
-#        username: sa
-#        password: jiang1974!@#
-#mysql版本大于8.0需要?serverTimezone=GMT%2B8链接
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/test_export?serverTimezone=GMT%2B8
-        username: root
-        password: root
-
-    servlet:
-        multipart:
-            max-file-size: 200MB
-            max-request-size: 1000MB
-
-    mustache:
-        enable: true
-        prefix: classpath:/templates/
-        suffix: .html
-        contet-type: text/html
-        cache: false
-    thymeleaf:
-      prefix: classpath:/templates/
-      suffix: .html
+  #mysql版本大于8.0需要?serverTimezone=GMT%2B8链接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_export?serverTimezone=GMT%2B8
+    username: root
+    password: plaxyy0708
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://49.4.52.122:3306/poney_dwf?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+  #    username: root
+  #    password: sipingsoft@2001
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 1000MB
+  mustache:
+    enable: true
+    prefix: classpath:/templates/
+    suffix: .html
+    contet-type: text/html
+    cache: false
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 mybatis:
-    mapper-locations: classpath:mappers/*Mapper.xml
-
+  mapper-locations: classpath:mappers/*Mapper.xml
+knife4j:
+  enable: true
 logging:
-    path: log/
+  level:
+    com.example.web.dao: debug
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+minio:
+  endpoint: http://42.194.222.156:32768
+  accesskey: adadfuiohouisfhoqhp
+  secrekey: NIObnuiBO+nsoaidhnoHbnond
+  bucketName: test
